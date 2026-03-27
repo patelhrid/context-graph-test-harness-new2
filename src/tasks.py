@@ -1,6 +1,6 @@
 """Task queue management."""
 
-MAX_RETRIES = 3
+MAX_RETRIES = 5
 RETRY_DELAY_SECONDS = 2
 
 
