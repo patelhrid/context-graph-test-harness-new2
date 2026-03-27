@@ -1,6 +1,6 @@
 """Application configuration loader."""
 
-APP_PORT = 8080
+APP_PORT = 9000
 DEBUG_MODE = False
 
 
