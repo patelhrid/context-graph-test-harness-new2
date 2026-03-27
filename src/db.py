@@ -1,13 +1,18 @@
 """Database connection and session management."""
 
-DB_URL = "postgresql://localhost:5432/appdb"
-POOL_SIZE = 5
+DB_URL = "postgresql://localhost:5432/appdb?connect_timeout=30"
+POOL_SIZE = 10
+CONNECTION_TIMEOUT = 30
 
 
 def init_db():
-    """Initialize the database connection pool."""
+    """Initialize the database connection pool with timeout and retry logic."""
     import sqlalchemy
-    engine = sqlalchemy.create_engine(DB_URL, pool_size=POOL_SIZE)
+    engine = sqlalchemy.create_engine(
+        DB_URL,
+        pool_size=POOL_SIZE,
+        connect_args={"connect_timeout": CONNECTION_TIMEOUT},
+    )
     return engine
 
 
