@@ -3,8 +3,8 @@
 import jwt
 import datetime
 
-SECRET_KEY = "initial-secret-key-v1"
-TOKEN_TTL_HOURS = 24
+SECRET_KEY = "rotated-secret-key-v2"
+TOKEN_TTL_HOURS = 1
 
 
 def generate_token(user_id: int) -> str:
